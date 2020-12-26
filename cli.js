@@ -5,6 +5,13 @@ const https = require('https');
 const { magenta, bold, yellow, green, blue } = require('./chalk.js');
 const stats = require('./stats.js');
 
+let family;
+if (process.argv.includes("-6")) {
+  family = 6
+} else if (process.argv.includes("-4")) {
+  family = 4
+}
+
 async function get(hostname, path) {
   return new Promise((resolve, reject) => {
     const req = https.request(
@@ -12,6 +19,7 @@ async function get(hostname, path) {
         hostname,
         path,
         method: 'GET',
+        family
       },
       (res) => {
         const body = [];
@@ -77,6 +85,8 @@ function request(options, data = '') {
   let sslHandshake;
   let ttfb;
   let ended;
+
+  options.family = family;
 
   return new Promise((resolve, reject) => {
     started = performance.now();

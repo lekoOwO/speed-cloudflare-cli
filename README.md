@@ -21,5 +21,5 @@
 
 # How to use
 ```bash
-npx speed-cloudflare-cli
+npx github:lekoOwO/speed-cloudflare-cli
 ```
