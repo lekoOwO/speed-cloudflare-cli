@@ -23,3 +23,15 @@
 ```bash
 npx github:lekoOwO/speed-cloudflare-cli
 ```
+
+## IPv6 Only
+
+```bash
+npx github:lekoOwO/speed-cloudflare-cli -6
+```
+
+## IPv4 Only
+
+```bash
+npx github:lekoOwO/speed-cloudflare-cli -4
+```
